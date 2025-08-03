@@ -1,22 +1,27 @@
+import './HelloWorld.css';
+
 export default function HelloWorld() {
+  const props = {
+    text: 'Hello World',
+    nama: 'urel ganteng'
+  }
   return (
     <div>
-      <HeaderHelloWorld/>
+      <HeaderHelloWorld {...props}/>
       <ParagraphHelloWorld/>      
     </div>
   );
 }
 
-export function HeaderHelloWorld() {
-  const text = "hello, world!";
+export function HeaderHelloWorld({text="upss, lupa ngasih text!", nama="no name"}) {
   return (
-    <h1>{text.toUpperCase()}</h1>
+    <h1 className='tittle'>{text.toUpperCase() + ` ${nama}`}</h1>
   )
 }
 
 export function ParagraphHelloWorld() {
   const text = "Selamat Belajar React, dari programmer jaman now!!";
   return (
-    <p>{text.toLocaleLowerCase()}</p>
+    <p className='content'>{text.toLocaleLowerCase()}</p>
   )
 }
