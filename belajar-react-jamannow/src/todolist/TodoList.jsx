@@ -3,30 +3,37 @@ import Todo from "./Todo";
 export default function TodoList() {
   const data = [
     {
+      id: 0,
       text: 'Learn HTML',
       isCompleted: true
     },
     {
+      id: 1,
       text: 'Learn CSS',
       isCompleted: true
     },
     {
+      id: 2,
       text: 'Learn JavaScript',
       isCompleted: true
     },
     {
+      id: 3,
       text: 'Learn React',
+      isCompleted: false
+    },
+    {
+      id: 4,
+      text: 'Learn React JS Router',
       isCompleted: false
     }
   ];
 
-  const todos = data.map(todo => {
-    return <Todo {...todo} /> 
-  });
-
   return (
     <ul>
-      {todos}  
+      {data.map(todo => (
+        <Todo key={todo.id} {...todo}/>
+      ))}  
     </ul>
   )
 }
