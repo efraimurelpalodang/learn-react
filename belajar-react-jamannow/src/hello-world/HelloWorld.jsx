@@ -3,7 +3,7 @@ import './HelloWorld.css';
 export default function HelloWorld() {
   const props = {
     text: 'Hello World',
-    nama: 'urel ganteng'
+    nama: 'Jhon Dae'
   }
   return (
     <div>
