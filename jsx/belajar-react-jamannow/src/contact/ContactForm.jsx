@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useImmer } from "use-immer";
 
 export default function ContactForm() {
-  const [contact, setContact] = useState({
+  const [contact, setContact] = useImmer({
     name: "",
-    message: ""
-  })
+    message: "",
+  });
 
   function handleNameChange(e) {
-    setContact({...contact, name: e.target.value})
+    setContact((contact) => {
+      contact.name = e.target.value;
+    });
   }
 
   function handleMessageChange(e) {
-    setContact({...contact, message: e.target.value})
+    setContact((contact) => {
+      contact.message = e.target.value;
+    });
   }
 
   return (
@@ -19,6 +23,7 @@ export default function ContactForm() {
       <h1>Contact Form</h1>
       <form>
         <input type="text" placeholder="Name..." value={contact.name} onChange={handleNameChange} />
+        <br />
         <input type="text" placeholder="Message..." value={contact.message} onChange={handleMessageChange} />
       </form>
       <h1>Contact Detail</h1>
@@ -27,5 +32,5 @@ export default function ContactForm() {
         <li>Your Message : {contact.message}</li>
       </ul>
     </div>
-  )
+  );
 }
