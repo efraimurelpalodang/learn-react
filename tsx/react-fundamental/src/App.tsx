@@ -1,39 +1,45 @@
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
-import ProfileCard from "./components/ProfileCard";
-import type { Teacher } from "./ts/types";
+import { Counter } from "./components/Counter";
+import ModalLike from "./components/ModalLike";
+import "./App.css";
+// import ProfileCard from "./components/ProfileCard";
+// import type { Teacher } from "./ts/types";
 
-const teachers: Teacher[] = [
-  {
-    id: 1,
-    name: "Jhon",
-    job: "Dosen",
-    year: 2000,
-  },
-  {
-    id: 2,
-    name: "Dae",
-    job: "Teknikal analisis",
-    year: 2003,
-  },
-  {
-    id: 3,
-    name: "Alice",
-    job: "Senior developer",
-    year: 1995,
-  },
-];
+// const teachers: Teacher[] = [
+//   {
+//     id: 1,
+//     name: "Jhon",
+//     job: "Dosen",
+//     year: 2000,
+//   },
+//   {
+//     id: 2,
+//     name: "Dae",
+//     job: "Teknikal analisis",
+//     year: 2003,
+//   },
+//   {
+//     id: 3,
+//     name: "Alice",
+//     job: "Senior developer",
+//     year: 1995,
+//   },
+// ];
 
 function App() {
   return (
-    <div>
+    <div style={{padding: "16px 32px"}}>
       <Header />
       <h1>Hello, World!</h1>
-      <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+      <ModalLike/>
+      {/* <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
         {teachers.map((teacher) => {
           return <ProfileCard name={teacher.name} job={teacher.job} year={teacher.year} key={teacher.id} />;
         })}
-      </div>
+      </div> */}
+      <Counter 
+      />
       <Welcome />
     </div>
   );
