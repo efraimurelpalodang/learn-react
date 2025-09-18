@@ -1,4 +1,4 @@
-// import Header from "./components/Header";
+import Header from "./components/Header";
 // import Welcome from "./components/Welcome";
 // import { Counter } from "./components/Counter";
 // import ModalLike from "./components/ModalLike";
@@ -36,6 +36,8 @@ import ProductListPage from "./pages/ProductListPage";
 function App() {
   return (
     <>
+      {/* header akan permanen karna dia tidak masuk di bagian routes */}
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/terms" element={<TermsPage />} />
