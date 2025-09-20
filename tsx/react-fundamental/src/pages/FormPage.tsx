@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+// import { useRef } from "react";
+import { useState } from "react";
 
 export default function FormPage() {
   // uncontrol component/input
-  const InputNameRef = useRef<HTMLInputElement>(null);
-  const InputEmailRef = useRef<HTMLInputElement>(null);
+  // const InputNameRef = useRef<HTMLInputElement>(null);
+  // const InputEmailRef = useRef<HTMLInputElement>(null);
 
   // controlled component/input
   const [fullNameInput, setFullNameInput] = useState("");
