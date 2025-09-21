@@ -1,8 +1,11 @@
 "use client";
+import { ViewUserButtonProps } from "@/app/ts/types";
+import { FC } from "react";
 
-export default function ViewUserButton() {
+
+const ViewUserButton: FC<ViewUserButtonProps> = ({userId}) => {
   const handleButtonClick = () => {
-    alert("clicked");
+    alert(`userId : ${userId}`);
   }
 
   return (
@@ -10,4 +13,6 @@ export default function ViewUserButton() {
       <button onClick={handleButtonClick}>Lihat user</button>
     </>
   );
-}
+};
+
+export default ViewUserButton;
