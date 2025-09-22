@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 // type RegisterFormSchema = {
 //   username: string;
@@ -9,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const RegisterFormSchema = z.object({
   username: z.string().min(3, "minimal 3 karakter bang").max(10, "maximal 10 aja oyy"),
-  password: z.string().min(8, "minimal 8 karakter ya bang"),
+  password: z.string().min(8, "minimal 8 karakter ya bang")
 });
 
 type RegisterFormSchema = z.infer<typeof RegisterFormSchema>;
@@ -18,6 +19,8 @@ export default function RhfPage() {
   const form = useForm<RegisterFormSchema>({
     resolver: zodResolver(RegisterFormSchema),
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleRegisterUser(val: RegisterFormSchema) {
     alert("form submited");
@@ -35,8 +38,17 @@ export default function RhfPage() {
         </label>
         <label>
           Password
-          <input type="password" {...form.register("password")} autoComplete="off" /> <br />
+          <input type={!showPassword? "password": "text"} {...form.register("password")} autoComplete="off" /> <br />
           <span style={{ fontSize: "10px", color: "red" }}>{form.formState.errors.password?.message}</span>
+        </label>
+        <label>
+          Konfirmasi Password
+          <input type={!showPassword? "password": "text"} {...form.register("password")} autoComplete="off" /> <br />
+          <span style={{ fontSize: "10px", color: "red" }}>{form.formState.errors.password?.message}</span>
+        </label>
+        <label htmlFor="show">
+          Show Password
+          <input type="checkbox" name="show" id="show" onChange={(e) => setShowPassword(e.target.checked) }/>
         </label>
         <button type="submit">Register user</button>
       </form>
