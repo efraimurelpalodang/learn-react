@@ -11,6 +11,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductListPage from "./pages/ProductListPage";
 import FormPage from "./pages/FormPage";
 import RhfPage from "./pages/RhfPage";
+import EmployesPage from "./pages/EmployesPage";
 // import ProfileCard from "./components/ProfileCard";
 // import type { Teacher } from "./ts/types";
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/products" element={<ProductListPage />} />
         <Route path="/form" element={<FormPage />} />
         <Route path="/rhf" element={<RhfPage />} />
+        <Route path="/employe" element={<EmployesPage />} />
         <Route path="*" element={<NotFoundPage />} />
         {/* Dynamic Route */}
         <Route path="/product/:slug" element={<ProductDetailPage />} />

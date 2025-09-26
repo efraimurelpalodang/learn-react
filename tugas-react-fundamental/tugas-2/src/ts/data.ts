@@ -31,7 +31,7 @@ export const datas: Products[] = [
     kategori: "makanan",
     harga: 17000,
     stok: 250,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuoS6_wIXY5dx2M4H88TE4UhSXA87yaOtz7w&s",
+    img: "https://t4.ftcdn.net/jpg/02/74/99/01/360_F_274990113_ffVRBygLkLCZAATF9lWymzE6bItMVuH1.jpg",
   },
   {
     id: 4,
