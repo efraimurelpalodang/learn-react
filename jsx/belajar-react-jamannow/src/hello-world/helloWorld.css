@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+.container {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.sans-serif {
+  font-family: sans-serif;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}

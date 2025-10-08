@@ -6,10 +6,10 @@ export default function HelloWorld() {
   }
 
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0" }}>
+    <>
       <HeaderHelloWorld {...Props} />
       <ParagraphHelloWorld text="Selamat belajar ReactTs, dengan programmer jaman now" />
-    </div>
+    </>
   )
 }
 
@@ -26,7 +26,7 @@ function ParagraphHelloWorld(Props: PropsHelloWorld) {
   const {text} = Props;
   return (
     <>
-      <p>{text.toLowerCase()}</p>
+      <p className="sans-serif">{text.toLowerCase()}</p>
     </>
   );
 }
