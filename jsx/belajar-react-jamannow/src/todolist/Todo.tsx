@@ -6,7 +6,7 @@ export default function Todo(Props: PropsTodo) {
     return null;
   } else {
     return (
-      <li>{isCompleted? <del>{text}</del>: text}</li>
+      <li>{text}{isCompleted && ' ✔️'}</li>
     );
   }
 }
