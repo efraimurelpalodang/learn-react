@@ -7,8 +7,8 @@ import { todos } from "../ts/data";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Container>
-      {todos.map((todo, index) => (
-        <Todo key={index} {...todo} />
+      {todos.map((todo) => (
+        <Todo key={todo.id} {...todo} />
       ))}
     </Container>
   </StrictMode>

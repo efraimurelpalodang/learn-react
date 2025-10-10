@@ -5,6 +5,7 @@ export type PropsHelloWorld = {
 }
 
 export type PropsTodo = {
+  id: number;
   text: string;
   isCompleted: boolean;
   isDeleted?: boolean;
