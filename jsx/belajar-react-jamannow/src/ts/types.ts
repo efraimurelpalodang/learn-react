@@ -11,6 +11,11 @@ export type PropsTodo = {
   isDeleted?: boolean;
 }
 
+export type PropsRow = {
+  id: number;
+  text: string;
+}
+
 export interface ChildContainer {
   children: ReactNode;
 }
