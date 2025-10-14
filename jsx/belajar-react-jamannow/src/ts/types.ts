@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
 
+export type PropsButtonParameter = {
+  text: string;
+  onSmash: () => void;
+}
+
 export type PropsButton = {
   text: string;
   messageAlert: string;
