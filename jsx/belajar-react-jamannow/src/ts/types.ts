@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
 
+export type PropsButton = {
+  text: string;
+  messageAlert: string;
+}
+
 export type PropsHelloWorld = {
   text: string;
 }
