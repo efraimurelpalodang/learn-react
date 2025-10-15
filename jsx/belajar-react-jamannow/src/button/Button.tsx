@@ -1,9 +1,9 @@
 import type { PropsButton } from "../ts/types";
 
-export default function Button(Props: PropsButton) {
-  const {text, messageAlert} = Props;
+export default function Button({text, messageAlert}: PropsButton) {
 
-  function handleCick() {
+  const handleCick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.info(e.target);
     alert(messageAlert);
   }
 
