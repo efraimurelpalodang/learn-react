@@ -5,7 +5,7 @@ const ToolBar = () => {
   };
 
   return (
-    <div onClick={handleClick}>
+    <div>
       <button onClick={handleClick}>First</button>
       <button onClick={handleClick}>Second</button>
     </div>
