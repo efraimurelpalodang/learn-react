@@ -6,6 +6,7 @@ import Button from "../button/Button";
 import ButtonParameter from "../button/ButtonParameter";
 import ToolBar from "../button/ToolBar";
 import SearchForm from "../form/SearchForm";
+import SayHalloForm from "../form/SayHalloForm";
 import "./helloWorld.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -13,9 +14,10 @@ createRoot(document.getElementById("root")!).render(
     <Container>
       <HelloWorld />
       <Button text="Click Me" messageAlert="Makasih bang sudah di click" />
-      <ButtonParameter text="button yang menerima function parameter" onSmash={() => alert('Hallo deck')}/>
-      <ToolBar/>
-      <SearchForm/>
+      <ButtonParameter text="button yang menerima function parameter" onSmash={() => alert("Hallo deck")} />
+      <ToolBar />
+      <SearchForm />
+      <SayHalloForm />
     </Container>
   </StrictMode>
 );
