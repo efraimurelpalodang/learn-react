@@ -7,6 +7,7 @@ import ButtonParameter from "../button/ButtonParameter";
 import ToolBar from "../button/ToolBar";
 import SearchForm from "../form/SearchForm";
 import SayHalloForm from "../form/SayHalloForm";
+import Counter from "../form/Counter";
 import "./helloWorld.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -18,6 +19,8 @@ createRoot(document.getElementById("root")!).render(
       <ToolBar />
       <SearchForm />
       <SayHalloForm />
+      <Counter />
+      <Counter />
     </Container>
   </StrictMode>
 );
