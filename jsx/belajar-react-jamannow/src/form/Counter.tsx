@@ -4,7 +4,12 @@ const Counter = () => {
   const [val, setVal] = useState(0);
 
   const handleClick = () => {
-    setVal(val+1);
+    setVal(val + 1);
+
+    //! jika di perlukan mengubah state berakli" dalam sekali klik
+    // setVal((v) => v + 1);
+    // setVal((v) => v + 1);
+    // setVal((v) => v + 1);
     console.log('count '+val);
   }
 
