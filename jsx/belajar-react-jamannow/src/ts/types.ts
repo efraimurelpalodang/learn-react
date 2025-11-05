@@ -9,6 +9,10 @@ export type Person = {
   }
 };
 
+export type TaskFormProps = {
+  onSubmit: (value: string) => void;
+};
+
 export type Change = ChangeEvent<HTMLInputElement>;
 
 export type buttonEvent = MouseEvent<HTMLButtonElement>;

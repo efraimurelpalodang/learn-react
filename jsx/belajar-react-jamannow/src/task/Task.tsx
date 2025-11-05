@@ -1,40 +1,20 @@
-import { useState } from "react";
 import { useImmer } from "use-immer";
-import type { buttonEvent, Change } from "../ts/types";
+import TaskForm from "./TaskForm";
+import TaskList from "./TaskList";
 
 const Task = () => {
-  const [item, setItem] = useState("");
-  const [Items, setItems] = useImmer<string[]>([]);
+  const [items, setItems] = useImmer<Array<string>>([]);
 
-  const handleChange = (e: Change) => {
-    setItem(e.target.value)
-  }
-
-  const handleClick = (e: buttonEvent) => {
-    e.preventDefault();
-    setItems((draft) => {
-      draft.push(item);
-    })
-    setItem("");
-  }
+  const handleSubmit = (item: string) => {
+    setItems((draft) => {draft.push(item)});
+  };
 
   return (
     <>
-      <h1>Buat Task</h1>
-      <form>
-        <input type="text" onChange={handleChange} value={item} />
-        <button type="submit" onClick={handleClick}>Simpan</button>
-      </form>
-      <h1>List Task</h1>
-      <ul>
-        {
-          Items.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))
-        }
-      </ul>
+      <TaskForm onSubmit={handleSubmit} />
+      <TaskList items={items}/>
     </>
-  )
-}
+  );
+};
 
 export default Task;
