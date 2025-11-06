@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { buttonEvent, Change, TaskFormProps } from "../ts/types";
 
 const TaskForm = ({onSubmit}: TaskFormProps) => {
-  const [item, setItem] = useState("");
+  const [item, setItem] = useState<string>("");
 
   const handleChange = (e: Change) => {
     setItem(e.target.value);
@@ -10,19 +10,23 @@ const TaskForm = ({onSubmit}: TaskFormProps) => {
 
   const handleClick = (e: buttonEvent) => {
     e.preventDefault();
-    onSubmit(item);
-    setItem("");
+    if(item) {
+      onSubmit(item);
+      setItem("");
+    } else {
+      alert('Task tidak boleh kosong broo...')
+    }
   }
 
   return (
     <>
-      <h1>Buat Task</h1>
+      <h1>Tambah Task Baru</h1>
       <form>
-        <input type="text" placeholder="Masukkan Task..." value={item} onChange={handleChange}/>
-        <button type="submit" onClick={handleClick}>Tambah</button>
+        <input type="text" placeholder="tambahkan task..." onChange={handleChange} value={item}/>
+        <button type="submit" onClick={handleClick}>tambah</button>
       </form>
     </>
-  )
+  );
 }
 
 export default TaskForm;

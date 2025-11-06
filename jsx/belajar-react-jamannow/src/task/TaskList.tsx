@@ -1,12 +1,9 @@
-type TaskListProps = {
-  items?: Array<string>;
-};
+import type { PropsTaskList } from "../ts/types";
 
-const TaskList = ({ items = [] }: TaskListProps) => {
-
+const TaskList = ({items}: PropsTaskList) => {
   return (
     <>
-      <h1>List Task</h1>
+      <h1>Daftar Task</h1>
       <ul>
         {
           items.map((item, idx) => (

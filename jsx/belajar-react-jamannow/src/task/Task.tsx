@@ -6,15 +6,15 @@ const Task = () => {
   const [items, setItems] = useImmer<Array<string>>([]);
 
   const handleSubmit = (item: string) => {
-    setItems((draft) => {draft.push(item)});
-  };
+    setItems(draft => {draft.push(item)})
+  }
 
   return (
     <>
-      <TaskForm onSubmit={handleSubmit} />
+      <TaskForm onSubmit={handleSubmit}/>
       <TaskList items={items}/>
     </>
   );
-};
+}
 
 export default Task;

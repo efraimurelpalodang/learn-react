@@ -9,6 +9,10 @@ export type Person = {
   }
 };
 
+export type PropsTaskList = {
+  items: string[];
+}
+
 export type TaskFormProps = {
   onSubmit: (value: string) => void;
 };
