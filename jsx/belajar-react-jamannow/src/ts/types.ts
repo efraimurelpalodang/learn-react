@@ -14,7 +14,7 @@ export type PropsTaskList = {
 }
 
 export type TaskFormProps = {
-  onSubmit: (value: string) => void;
+  setItems: (cb: (draft: string[]) => void) => void;
 };
 
 export type Change = ChangeEvent<HTMLInputElement>;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { buttonEvent, Change, TaskFormProps } from "../ts/types";
 
-const TaskForm = ({onSubmit}: TaskFormProps) => {
+const TaskForm = ({setItems}: TaskFormProps) => {
   const [item, setItem] = useState<string>("");
 
   const handleChange = (e: Change) => {
@@ -11,7 +11,7 @@ const TaskForm = ({onSubmit}: TaskFormProps) => {
   const handleClick = (e: buttonEvent) => {
     e.preventDefault();
     if(item) {
-      onSubmit(item);
+      setItems((draft) => {draft.push(item)});
       setItem("");
     } else {
       alert('Task tidak boleh kosong broo...')

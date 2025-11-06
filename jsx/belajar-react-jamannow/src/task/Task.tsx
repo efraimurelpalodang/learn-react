@@ -3,15 +3,15 @@ import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 const Task = () => {
-  const [items, setItems] = useImmer<Array<string>>([]);
+  const [items, setItems] = useImmer<string[]>([]);
 
-  const handleSubmit = (item: string) => {
-    setItems(draft => {draft.push(item)})
+  const handleSubmit = (cb: (item: string[]) => void) => {
+    setItems(cb);
   }
 
   return (
     <>
-      <TaskForm onSubmit={handleSubmit}/>
+      <TaskForm setItems={handleSubmit}/>
       <TaskList items={items}/>
     </>
   );
