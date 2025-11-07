@@ -10,11 +10,11 @@ const CounterApp = () => {
   }
 
   return (
-    <>
-      <Counter/>
-      {show2 && <Counter/> }
-      <input type="checkbox" checked={show2} onChange={handleChange} />
-    </>
+   <>
+    {/* <Counter nama="Jhon Dae"/> */}
+    {show2 ? <Counter nama="Jhon Dae" /> : <Counter nama="Alice" />}
+    <input type="checkbox" checked={show2} onChange={handleChange} />
+   </>
   );
 }
 

@@ -9,6 +9,10 @@ export type Person = {
   }
 };
 
+export type PropsCounter = {
+  nama: string
+}
+
 export type PropsTaskList = {
   items: string[];
 }

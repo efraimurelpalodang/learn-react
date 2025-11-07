@@ -1,6 +1,7 @@
 import { useState } from "react";
+import type { PropsCounter } from "../ts/types";
 
-const Counter = () => {
+const Counter = ({ nama }: PropsCounter) => {
   const [counter, setCounter] = useState(0);
 
   const handleClick = () => {
@@ -9,7 +10,7 @@ const Counter = () => {
 
   return (
     <>
-      <h1>Counter : {counter}</h1>
+      <h1>Counter {nama} : {counter}</h1>
       <button type="button" onClick={handleClick}>Tambah</button>
     </>
   )
