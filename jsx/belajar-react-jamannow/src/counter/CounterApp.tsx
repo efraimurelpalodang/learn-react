@@ -12,8 +12,11 @@ const CounterApp = () => {
   return (
     <>
     {/* <Counter nama="Jhon Dae"/> */}
-    {show2 && <Counter nama="Jhon Dae"/> }
-    {!show2 && <Counter nama="Alice"/> }
+    {show2 ? (
+      <Counter nama="Jhon Dae" key='1' />
+    ) : (
+      <Counter nama="Alice" key='2'/>
+    )}
     <input type="checkbox" checked={show2} onChange={handleChange} />
     </>
   );
